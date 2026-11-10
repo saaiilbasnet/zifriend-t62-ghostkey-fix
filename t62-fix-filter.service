@@ -1,0 +1,12 @@
+[Unit]
+Description=Zifriend T62 Right Arrow/B hardware fault workaround
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/saaiilbasnet/t62-fix-filter.py
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
