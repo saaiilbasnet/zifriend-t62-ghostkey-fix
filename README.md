@@ -34,6 +34,13 @@ Since the two keys can't be disambiguated, this script:
 The T62 exposes two duplicate `evdev` nodes under the same name; the
 script grabs both, since which one carries the live events can vary.
 
+Unplugging the keyboard kills its device node, so the filter exits
+(on purpose, with a non-zero status) rather than hang on a dead
+device. Combined with `Restart=always` in the systemd service and a
+30-second retry loop while looking for the keyboard, replugging it
+brings the fix back automatically within a couple of seconds, no
+manual restart needed.
+
 ## Usage
 
 Requires `python3-evdev`:
