@@ -48,6 +48,7 @@ Ctrl+C releases the device back to normal.
 ## Run on boot (systemd)
 
 ```
+sudo cp t62-fix-filter.py /opt/t62-fix-filter.py
 sudo cp t62-fix-filter.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable --now t62-fix-filter.service

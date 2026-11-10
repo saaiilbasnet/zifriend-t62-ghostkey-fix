@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/saaiilbasnet/t62-fix-filter.py
+ExecStart=/usr/bin/python3 /opt/t62-fix-filter.py
 Restart=on-failure
 RestartSec=2
 
